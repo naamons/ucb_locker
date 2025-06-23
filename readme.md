@@ -1,5 +1,5 @@
-# TC179x UCB Locker — Open-Source CLI/GUI Helper  
-Lock the **U-Code Bytes (UCB)** of Continental / Infineon **TriCore TC179x** engine-control units.
+# TC1782 UCB Locker — Open-Source CLI/GUI Helper  
+Lock the **U-Code Bytes (UCB)** of Continental / Infineon **TriCore TC1782** engine-control units.
 
 > **⚠️  PERMANENT RISK**  
 > Writing bad data into the UCB sector can *irreversibly* brick an ECU.  
@@ -25,26 +25,6 @@ After patching, the tool **re-computes the additive checksums** on every modifie
 * Raw **32 × 0x20-byte EEPROM** images (Infineon internal EEPROM area).  
 * No ECU is read or written directly – you work on a file exported by a modern flash tool
   (VF2, CMDFlash, …).
-
----
-
-## Installation
-
-```bash
-# clone the repo
-git clone https://github.com/your-org/tc179x-ucb-locker.git
-cd tc179x-ucb-locker
-
-# choose one interface (both can coexist)
-
-# 1) CLI only
-python3 -m pip install -r requirements-cli.txt
-
-# 2) GUI (PyQt 6)
-python3 -m pip install -r requirements-gui.txt
-```
-
-*Python 3.8 … 3.13 are fine.  macOS, Linux tested.*
 
 ---
 
@@ -103,16 +83,6 @@ Or ask the tool itself (`--auto-pwd`).
 
 ---
 
-## Contributing
-
-PRs are welcome – especially for:
-
-* Additional checksum algorithms (some derivatives use 16-bit sums).  
-* Auto-detecting page layout of other TriCore families (TC17xx, AURIX 1G).  
-* More sanity checks before saving.
-
----
-
 ## License
 
 [MIT](LICENSE).  Use at your own risk – **no warranty** for damaged ECUs, lost time,  
@@ -122,7 +92,7 @@ or any other consequences.
 
 ## Credits
 
-* Reverse-engineering community @ **mhh-auto**, **pcmflash forum**, **Trionic & OpenECU**.  
+* Reverse-engineering community @ **mhh-auto**, **Trionic & OpenECU**.  
 * Based on public Infineon documents *AP32219*/*AP32354* ( TriCore® Boot ROM ).
 
 Happy hacking & stay safe!
